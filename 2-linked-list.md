@@ -224,10 +224,18 @@ class LinkedList:
 ```
 
 ## Big O Notation
-Common functions of a Linked List
-
+Operator | Performance
+---------|------------
+insert_head(value)  | O(1)
+insert_tail()  | O(1)
+insert(i, value)  | O(n)
+remove_head()  | O(1)
+remove_tail(index)  | O(1)
+remove(i)  | O(n)
+size()     | O(1)
+empty()    | O(1)
 ## Example
 Lorem ipsum dolor sit amet.
 
 ## Try it out!
-Lorem ipsum dolor sit amet.
+You like to exercise, and you want to try doing a superset. A superset is performing *n* amount of repetitions on the same exercises. You can implement a circular linked list to do that. [Here is the code](/code/superset.py) for you to create your workout. A [sample solution](/code/superset_example.py) is provided for you to compare your answer. Have fun, and remember: Is bulking season!
