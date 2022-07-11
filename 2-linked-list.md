@@ -7,10 +7,10 @@ Imagine it is Easter Time, and you are a kid. Your parents are excited to set yo
 
 Was it worth it to go through all those clues, just for that cake? After all the cake is a lie. It's up to you to decide.
 
-## Trowing a barbecue (and understanding memory)
+## Throwing a barbecue (and understanding memory)
 Let's talk about memory, and we will use the garden previously mentioned as an analogy.
 
-Suppose you are trowing a barbecue, and you are expecting 15 friends to come over (hopefully you have that many friends for this example to work), so you set up 15 chairs. They all arrive right on time, but to your surprise, they invited more people to the barbecue! You have plenty of meat, so that's not a problem. But the chairs! You didn't set up enough of them. Luckily you have more stored on the basement, so you take the ones you need and put them in the garden, allowing every guest to have somewhere to sit.
+Suppose you are throwing a barbecue, and you are expecting 15 friends to come over (hopefully you have that many friends for this example to work), so you set up 15 chairs. They all arrive right on time, but to your surprise, they invited more people to the barbecue! You have plenty of meat, so that's not a problem. But the chairs! You didn't set up enough of them. Luckily you have more stored on the basement, so you take the ones you need and put them in the garden, allowing every guest to have somewhere to sit.
 
 Let's discuss now the technical part of a Linked List.
 ## What is a Linked List?
@@ -224,18 +224,18 @@ class LinkedList:
 ```
 
 ## Big O Notation
-Operator | Performance
----------|------------
+Operator            | Performance
+--------------------|------------
 insert_head(value)  | O(1)
-insert_tail()  | O(1)
-insert(i, value)  | O(n)
-remove_head()  | O(1)
+insert_tail()       | O(1)
+insert(i, value)    | O(n)
+remove_head()       | O(1)
 remove_tail(index)  | O(1)
-remove(i)  | O(n)
-size()     | O(1)
-empty()    | O(1)
+remove(i)           | O(n)
+size()              | O(1)
+empty()             | O(1)
 ## Example
 Lorem ipsum dolor sit amet.
 
 ## Try it out!
-You like to exercise, and you want to try doing a superset. A superset is performing *n* amount of repetitions on the same exercises. You can implement a circular linked list to do that. [Here is the code](/code/superset.py) for you to create your workout. A [sample solution](/code/superset_example.py) is provided for you to compare your answer. Have fun, and remember: Is bulking season!
+You like to exercise, and you want to try doing a superset. A superset is performing *n* amount of repetitions on the same exercises. You can implement a circular linked list to do that. [Here is the code](/code/superset.py) for you to create your workout. A [sample solution](/code/superset_example.py) is provided for you to compare your answer. Have fun, and remember: It's bulking season!

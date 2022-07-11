@@ -54,11 +54,11 @@ class Superset:
         nodes = []
         curr = self.first  # Start from current node. Since it is circular, it doesn't matter
         while curr != None:
-            if curr.data in nodes:
+            if id(curr) in nodes:
                 return
             else:
                 yield curr.data  # Provide (yield) each item to the user
-                nodes.append(curr.data)
+                nodes.append(id(curr))
             curr = curr.next # Go forward in the linked list
 
     def __str__(self):

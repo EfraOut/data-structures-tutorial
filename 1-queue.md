@@ -54,12 +54,12 @@ Please take special notice on how the dequeue method works. First, is going to c
 
 It is important to notice the deleting part. Without that part, the program will always dequeue the same value, and the queue will never get empty.
 ## Big O Notation
-Operator | Performance
----------|------------
+Operator        | Performance
+----------------|------------
 enqueue(value)  | O(1)
-dequeue()  | O(n)*
-size()     | O(1)
-empty()    | O(1)
+dequeue()       | O(n)*
+size()          | O(1)
+empty()         | O(1)
 
 \* If the queue is implemented on an array, it will be O(n). If it is implemented on a linked list (more on that later) it will be O(1). 
 ## Example
