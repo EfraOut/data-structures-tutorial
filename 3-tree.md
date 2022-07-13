@@ -280,3 +280,5 @@ empty()           | O(1)
 Lorem ipsum dolor sit amet.
 ## Try it out!
 Lorem ipsum dolor sit amet.
+
+[Go back to Welcome Page](0-welcome.md)

@@ -239,3 +239,5 @@ Lorem ipsum dolor sit amet.
 
 ## Try it out!
 You like to exercise, and you want to try doing a superset. A superset is performing *n* amount of repetitions on the same exercises. You can implement a circular linked list to do that. [Here is the code](/code/superset.py) for you to create your workout. A [sample solution](/code/superset_example.py) is provided for you to compare your answer. Have fun, and remember: It's bulking season!
+
+[Go back to Welcome Page](0-welcome.md)
