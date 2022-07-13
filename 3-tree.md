@@ -20,6 +20,43 @@ A definition of recursion is *a function that calls itself.* Maybe it does that 
 
 [Example of recursion.](#tree)
 
+For example, the Francois number is a number sequence similar to Fibonacci. The first digit starts as 2, the second digit starts as 1, and the third (and subsequential digits) are the adding of the last two digits.
+The following Python code shows how to use a tail recursion to find the *n* Francois number:
+
+```python
+def françois(n):
+    """
+    The Lucas series has the same recursive relationship as the
+    Fibonacci sequence, where each term is the sum of the two
+    previous terms, but with different starting values.
+    The starting values are 2 and 1, instead of 0 and 1 as
+    Fibonacci.
+    """
+    def go(n, first_digit, second_digit):
+        """ 
+        Tail recursion call.
+        Parameters:
+        n: The nth digit to be searched for.
+        first_digit: The second-to-last digit that was found.
+        second_digit: The last digit that was found.
+        return:
+        After all the recursion is done, it returns the second_digit
+        """
+
+        # Base cases.
+        if n <= 0:
+            return "Invalid number. Please enter a positive integer"
+        if n == 2:
+            return second_digit
+        if n == 1:
+            return first_digit
+
+        # Recursive call.
+        else:
+            return go((n-1), second_digit, first_digit + second_digit)
+
+    return go(n, 2, 1)
+```
 ## Tree in Python
 Here is an implementation of a Binary Search Tree, or BST for short:
 
@@ -240,42 +277,6 @@ size()            | O(1)
 empty()           | O(1)
 
 ## Example
-The Francois number is a number sequence similar to Fibonacci. The first digit starts as 2, the second digit starts as 1, and the third (and subsequential digits) are the adding of the last two digits.
-The following Python code shows how to use a tail recursion to find the *n* Francois number:
-
-```python
-def françois(n):
-    """
-    The Lucas series has the same recursive relationship as the
-    Fibonacci sequence, where each term is the sum of the two
-    previous terms, but with different starting values.
-    The starting values are 2 and 1, instead of 0 and 1 as
-    Fibonacci.
-    """
-    def go(n, first_digit, second_digit):
-        """ 
-        Tail recursion call.
-        Parameters:
-        n: The nth digit to be searched for.
-        first_digit: The second-to-last digit that was found.
-        second_digit: The last digit that was found.
-        return:
-        After all the recursion is done, it returns the second_digit
-        """
-
-        # Base cases.
-        if n <= 0:
-            return "Invalid number. Please enter a positive integer"
-        if n == 2:
-            return second_digit
-        if n == 1:
-            return first_digit
-
-        # Recursive call.
-        else:
-            return go((n-1), second_digit, first_digit + second_digit)
-
-    return go(n, 2, 1)
-```
-
+Lorem ipsum dolor sit amet.
 ## Try it out!
+Lorem ipsum dolor sit amet.
