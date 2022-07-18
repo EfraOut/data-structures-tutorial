@@ -11,5 +11,7 @@ This tutorial includes the following data structures:
 For more information, you can contact:
 
 Efrain Gomez Fajardo
+
 CSE 212
+
 gom21023@byui.edu
