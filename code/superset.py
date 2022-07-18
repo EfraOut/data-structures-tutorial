@@ -31,15 +31,15 @@ class Superset:
         # Create the new node.
         new_node = Superset.Node(value)
 
-        # If the list is empty, then point both head and tail
+        # If the list is empty, then point both current and first
         # to the new node.
         if self.current is None:
             new_node.next = new_node.prev
             new_node.prev = new_node.next
             self.current = new_node
             self.first = new_node
-        # If the list is not empty, then only self.head will be
-        # affected.
+        # If the list is not empty, then connect first and current
+        # to each other.
         else:
             new_node.prev = self.current # Connect new node to current
             self.current.next = new_node # Connect previous node to new node
@@ -52,7 +52,7 @@ class Superset:
         Iterate forward through the Linked List
         """
         nodes = []
-        curr = self.first  # Start from current node. Since it is circular, it doesn't matter
+        curr = self.first  # Start from the first node.
         while curr != None:
             if curr.data in nodes:
                 return
@@ -75,6 +75,11 @@ class Superset:
             output += str(value)
         output += "]"
         return output
+
+
+# First, change the Node, so it can store, the name of the exercise
+# and the number of repetitions.
+# Hint: You also need to change the __iter__ yield the added values.
 
 # Initialize an instance of Superset.
 

@@ -1,9 +1,11 @@
 # Linked List
-> **[Quote goes here]**
+> **A link is only as string as its weakest link.**
 
-> Author
+> Donald Kruth
 
 Imagine it is Easter Time, and you are a kid. Your parents are excited to set you loose in the search of the easter eggs they hid throughout the garden. To help you on your quest, you received a map showing one of the eggs. As soon as you get to the X, you find an egg! When you open the egg, you find another map, showing the location of another egg. Finding that egg reveals another map that leads to another map. After following these clues for what felt like ages, you found the final map. It leads back to your house, where your mom has baked your favorite cake.
+
+![Easter eggs](/pictures/Easter%20Eggs.png)
 
 Was it worth it to go through all those clues, just for that cake? After all the cake is a lie. It's up to you to decide.
 
@@ -234,10 +236,50 @@ remove_tail(index)  | O(1)
 remove(i)           | O(n)
 size()              | O(1)
 empty()             | O(1)
+
+Linked lists are great for keeping track of the beginning and end (only change the two pointers). However, for adding or removing elements at the end, the performance changes (three pointers have to be modified).
 ## Example
-Lorem ipsum dolor sit amet.
+Linked lists don't need to be only one direction, they can be connected to each other! To create a circular linked list, we have to change some of the methods.
+
+First, the constructor will not keep track of `head` and `tail`. We will track what the first node is, and which one was currently added.
+
+```python
+def __init__(self):
+    """
+    Initialize an empty linked list.
+    """
+    self.current = None
+    self.first = None
+```
+
+Now, we need to connect the last node (or current, as we call it) to the first, and the first to the last.
+```python
+def insert(self, value):
+    """
+    Insert a new node to the linked list.
+    """
+    # Create the new node.
+    new_node = LinkedList.Node(value)
+
+    # If the list is empty, then point current head and first
+    # to the new node.
+    if self.current is None:
+        new_node.next = new_node.prev
+        new_node.prev = new_node.next
+        self.current = new_node
+        self.first = new_node
+    # If the list is not empty, then connect first and current
+    # to each other.
+    else:
+        new_node.prev = self.current # Connect new node to current
+        self.current.next = new_node # Connect previous node to new node
+        new_node.next = self.first.prev # Connect new node to first
+        self.first.prev = new_node.next # Connect first to new node
+        self.current = new_node # Current points to the new node.
+
+```
 
 ## Try it out!
-You like to exercise, and you want to try doing a superset. A superset is performing *n* amount of repetitions on the same exercises. You can implement a circular linked list to do that. [Here is the code](/code/superset.py) for you to create your workout. A [sample solution](/code/superset_example.py) is provided for you to compare your answer. Have fun, and remember: It's bulking season!
+You like to exercise, and you want to try doing a superset. A superset is performing *n* amount of repetitions on the same exercises. You can use a circular linked list to do that. [Here is the code](/code/superset.py) for you to create your workout. A [sample solution](/code/superset_example.py) is provided for you to compare your answer. Have fun, and remember: It's bulking season!
 
 [Go back to Welcome Page](0-welcome.md)

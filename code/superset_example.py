@@ -8,12 +8,13 @@ class Superset:
         Each node of the linked list will have data and links to the 
         previous and next node.
         """
-        def __init__(self, data):
+        def __init__(self, exercise_name, reps):
             """ 
             Initialize the node to the data provided. Initially
             the links are unknown so they are set to None.
             """
-            self.data = data
+            self.exercise_name = exercise_name # Data added.
+            self.reps = reps # Data added.
             self.next = None
             self.prev = None
 
@@ -24,12 +25,12 @@ class Superset:
         self.current = None
         self.first = None
 
-    def insert(self, value):
+    def insert(self, exercise_name, reps):
         """
         Insert a new node to the linked list.
         """
         # Create the new node.
-        new_node = Superset.Node(value)
+        new_node = Superset.Node(exercise_name, reps)
 
         # If the list is empty, then point both head and tail
         # to the new node.
@@ -57,7 +58,8 @@ class Superset:
             if id(curr) in nodes:
                 return
             else:
-                yield curr.data  # Provide (yield) each item to the user
+                yield curr.exercise_name  # Provide (yield) each item to the user
+                yield curr.reps  # Provide (yield) each item to the user
                 nodes.append(id(curr))
             curr = curr.next # Go forward in the linked list
 
@@ -81,8 +83,9 @@ superset = Superset()
 # Store on a variable the number of sets to perform.
 num_sets = int(input("Enter the number of sets: "))
 # Using the insert() method, add the exercises to perform.
-superset.insert("Pushup")
-superset.insert("Alternating Hammer Curl")
-superset.insert("Tricep Dip")
+superset.insert("Pushup", 10)
+superset.insert("Alternating Hammer Curl", 15)
+superset.insert("Tricep Dip", 15)
+superset.insert("Elbow Plank", 15)
 # Display the exercises to perform and the number of sets.
 print("You need to perform the following exercises", superset, "a total of", num_sets)

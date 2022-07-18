@@ -1,11 +1,15 @@
 # Queue
-> **An Englishman, even if he is alone, forms an orderly queue of one**
+> **An Englishman, even if he is alone, forms an orderly queue of one.**
 
  > George Mikes
 
 Have you ever stood in line? Maybe the line for the self-checkout at Walmart was long. Or maybe you've been camping outside the store for hours waiting for midnight and get those Black Friday Discounts.
 
 If you have experienced anything similar to that, congratulations! You have an empirical understanding of what a queue is. And if you haven't experienced anything like that, even more congratulations!
+
+![Queue to the exit](/pictures/Queue.png)
+
+In case you are wondering why are you upside down, it is because you just got in line, and are already in despair.
 
 ## What is a queue?
 A queue is an orderly list, but we only care about the beginning and the end. Let's bring back the example of standing in line to illustrate a queue. Suppose that you are done doing your groceries shopping, and now is time to checkout. You see the big line of people waiting to checkout as well. What do you do? 
@@ -63,7 +67,75 @@ empty()         | O(1)
 
 \* If the queue is implemented on an array, it will be O(n). If it is implemented on a linked list (more on that later) it will be O(1). 
 ## Example
-The [following example](/code/queue_example.py) has the implementation of the other two operators: `size()` and `empty()`, and a simple program that will help you understand the concepts in action.
+People from the Spider-man universe is headed towards Rexburg. They heard that BYU-Idaho has the best Chick-Fill-A of the world, and they want to try it out!
+
+The following Python code demonstrates how a queue is useful to keep track of our lovely visitors!
+
+```python
+class Queue:
+    """
+    An orderly array in a FIFO system.
+    """
+
+    def __init__(self):
+        """
+        Initialize the empty queue using a Python List.
+        """
+        self.queue = []
+
+    def enqueue(self, value):
+        """
+        Enqueue the value provided into the queue
+        """
+        self.queue.append(value)
+
+    def dequeue(self):
+        """
+        Dequeue the next value and return it
+        """
+        if len(self.queue) <= 0:
+            raise IndexError()
+        value = self.queue[0]
+        del self.queue[0]
+        return value
+    
+    def is_empty(self):
+        """
+        Check to see if the queue is empty.
+        """
+        return len(self.queue) == 0
+    
+    def display(self):
+        """
+        Displays the values of the queue.
+        """
+        if len(self.queue) <= 0:
+            print("There are no elements in the queue")
+        else:
+            print("The elements in the queue are:")
+            for element in self.queue:
+                print(element)
+
+    def __len__(self):
+        """
+        This function will be called when using the
+        len() function. 
+        """
+        return len(self.queue)
+
+
+
+# Initialize a queue.
+queue = Queue()
+
+queue.enqueue("Mary Jane")
+queue.enqueue("Peter")
+queue.dequeue()
+queue.enqueue("Octavius")
+
+queue.display("Octavius")
+```
+
 ## Try it out!
 Your family has been having issues with the assigned chores! You and your siblings agreed to take turns on washing the dishes. When any of you has done it, they will do it again once everyone has done it as well.
 Follow [this link](/code/family_chores.py) to implement a queue so you can keep track of who's next. After you are done, compare your answer to the [sample solution](/code/family_chores_solution.py). This is just a solution, it doesn't mean it is the only way of solving it.
