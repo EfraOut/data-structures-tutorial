@@ -3,24 +3,37 @@
 
 > Groot
 
+![Climbing a tree](/pictures/Tree.jpg)
+
 Some people enjoy working on their family history. It can be fun to trace back where you come from, and where your parents come from, and where their parents come from...
 
-People find it useful to see all that information on a family tree. In the family tree, the individual place themselves as a dot, and two "branches" come out of it. Each of the branches then connects to a dot, which represent their parents. Each of the parents then also has two branches coming out. And the process continues.
+People find it useful to see all that information on a family tree. In the family tree, the individual place themselves as a dot, and two "branches" come out of it. Each of the branches then connects to a dot, which represent their parents. Each of the parents then also has two branches coming out, which represents their parents. And the process continues.
 
 ## What is a tree?
+A tree not only gives us life through oxygen, but it is also a very good tool for sorting and finding.
+
 Remember when we talked about Linked Lists? If not, [review that information first](/2-linked-list.md) before moving on. Trust me, it will help you understand things better. Basically, a tree is a Linked List, but each node connects to more than one other node.
 
 The first node is called the **root**. If the next node is not connected to another node, it is called a **leaf.** If it does have a node, it is called a **parent.**
 Each node connected to a **parent** is a **child.** Any node to the left or right to the parent is a **subtree**
 
+![Tree diagram](/pictures/Tree_diagram.png)
+
+As you can see on the diagram above, a tree follows the following rules:
+* The root determines where the new node will go.
+* If it is bigger than the root, it will go to the right.
+* If it is smaller than the root, it will to the right.
+* All of these rules apply to the subtrees.
 ## Recursion
-Try searching on Google "recursion" and see what happens!
+Try searching "recursion" on Google and see what happens!
 
-A definition of recursion is *a function that calls itself.* Maybe it does that because it doesn't have friends.
+A definition of recursion is *a function that calls itself.* Maybe it does that because it doesn't have friends. In either way, recursion can be very powerful, as you will see in the following examples:
 
-[Example of recursion.](#tree)
+* [Example of recursion.](#tree)
 
-For example, the Francois number is a number sequence similar to Fibonacci. The first digit starts as 2, the second digit starts as 1, and the third (and subsequential digits) are the adding of the last two digits.
+* A tree uses recursion in his methods, as you will be able to see on the [implementation below.](#tree-in-python)
+
+* The Francois numbers is a number sequence similar to Fibonacci. The first digit starts as 2, the second digit starts as 1, and the third (and subsequential digits) are the adding of the last two digits.
 The following Python code shows how to use a tail recursion to find the *n* Francois number:
 
 ```python
@@ -276,9 +289,10 @@ height(node)      | O(n)
 size()            | O(1)
 empty()           | O(1)
 
+Every time you traverse to either left or right, you are leaving behind the other halve. That is why the performance of a tree is O(log n)!
 ## Example
 Lorem ipsum dolor sit amet.
 ## Try it out!
 Lorem ipsum dolor sit amet.
 
-[Go back to Welcome Page](0-welcome.md)
+[Go back to Welcome Page](0-welcome)
