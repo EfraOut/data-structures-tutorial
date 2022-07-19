@@ -124,16 +124,17 @@ class Queue:
         return len(self.queue)
 
 
-
 # Initialize a queue.
-queue = Queue()
+chick_fil_a = Queue()
 
-queue.enqueue("Mary Jane")
-queue.enqueue("Peter")
-queue.dequeue()
-queue.enqueue("Octavius")
+# People are arriving to the store!
+chick_fil_a.enqueue("Mary Jane")
+chick_fil_a.enqueue("Peter")
+chick_fil_a.dequeue() # First person served.
+chick_fil_a.enqueue("Octavius")
 
-queue.display("Octavius")
+# Check who is still on the queue.
+chick_fil_a.display()
 ```
 
 ## Try it out!

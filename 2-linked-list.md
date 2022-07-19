@@ -1,7 +1,7 @@
 # Linked List
-> **A link is only as string as its weakest link.**
+> **A link is only as strong as its weakest link.**
 
-> Donald Kruth
+> Donald Knuth
 
 Imagine it is Easter Time, and you are a kid. Your parents are excited to set you loose in the search of the easter eggs they hid throughout the garden. To help you on your quest, you received a map showing one of the eggs. As soon as you get to the X, you find an egg! When you open the egg, you find another map, showing the location of another egg. Finding that egg reveals another map that leads to another map. After following these clues for what felt like ages, you found the final map. It leads back to your house, where your mom has baked your favorite cake.
 

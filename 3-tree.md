@@ -17,19 +17,12 @@ Remember when we talked about Linked Lists? If not, [review that information fir
 The first node is called the **root**. If the next node is not connected to another node, it is called a **leaf.** If it does have a node, it is called a **parent.**
 Each node connected to a **parent** is a **child.** Any node to the left or right to the parent is a **subtree**
 
-![Tree diagram](/pictures/Tree_diagram.png)
-
-As you can see on the diagram above, a tree follows the following rules:
-* The root determines where the new node will go.
-* If it is bigger than the root, it will go to the right.
-* If it is smaller than the root, it will to the right.
-* All of these rules apply to the subtrees.
 ## Recursion
 Try searching "recursion" on Google and see what happens!
 
 A definition of recursion is *a function that calls itself.* Maybe it does that because it doesn't have friends. In either way, recursion can be very powerful, as you will see in the following examples:
 
-* [Example of recursion.](#tree)
+* [Example of recursion.](#recursion)
 
 * A tree uses recursion in his methods, as you will be able to see on the [implementation below.](#tree-in-python)
 
@@ -71,7 +64,17 @@ def françois(n):
     return go(n, 2, 1)
 ```
 ## Tree in Python
-Here is an implementation of a Binary Search Tree, or BST for short:
+![Tree diagram](/pictures/Tree_diagram.png)
+
+We are going to create a type of tree called a Binary Search Tree. This type of tree is great not only for sorting, but also for finding. A Binary Search Tree follows these rules:
+
+* The root determines where the new node will go.
+* If it is bigger than the root, it will go to the right.
+* If it is smaller than the root, it will to the right.
+* All of these rules apply to the subtrees.
+
+
+Here is an implementation on Python:
 
 ```python
 class BST:
@@ -103,6 +106,10 @@ class BST:
         Initialize an empty BST.
         """
         self.root = None
+```
+
+For inserting, we use two functions, because they are going to be recursive:
+```python
 
     def insert(self, data):
         """
@@ -141,7 +148,11 @@ class BST:
                 # Need to keep looking.  Call _insert
                 # recursively on the right sub-tree.
                 self._insert(data, node.right)
+```
 
+The same applies to the `__contains__`. This function allows using the `in` operator for the Binary Search Tree:
+
+```python
     def __contains__(self, data):
         """ 
         Checks if data is in the BST.  This function
@@ -168,7 +179,11 @@ class BST:
                     return self._contains(data, node.right)
                 else:
                     return self._contains(data, node.left)
+```
 
+We need to also implement a way to use a `for` loop. It will be necessary to implement the traverse functions:
+
+```python
     def __iter__(self):
         """
         Perform a forward traversal (in order traversal) starting from 
@@ -214,7 +229,7 @@ class BST:
         
     def __reversed__(self):
         """
-        Perform a formward traversal (in order traversal) starting from 
+        Perform a forward traversal (in order traversal) starting from 
         the root of the BST.  This function is called when a the 
         reversed function is called and is frequently used with a for
         loop.
@@ -241,7 +256,11 @@ class BST:
             yield from self._traverse_backward(node.right)
             yield node.data
             yield from self._traverse_backward(node.left)
+```
 
+The last operation is to get the height. The height is how many nodes down are between the root and the furthest leaf:
+
+```python
     def get_height(self):
         """
         Determine the height of the BST.  Note that an empty tree
@@ -293,6 +312,6 @@ Every time you traverse to either left or right, you are leaving behind the othe
 ## Example
 Lorem ipsum dolor sit amet.
 ## Try it out!
-Lorem ipsum dolor sit amet.
+Adding and finding the books from your library.
 
 [Go back to Welcome Page](0-welcome)
