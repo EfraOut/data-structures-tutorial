@@ -14,4 +14,4 @@ Efrain Gomez Fajardo
 
 CSE 212
 
-gom21023@byui.edu
+efrainarturog@gmail.com
