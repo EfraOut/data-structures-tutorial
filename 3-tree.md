@@ -314,4 +314,4 @@ Lorem ipsum dolor sit amet.
 ## Try it out!
 Adding and finding the books from your library.
 
-[Go back to Welcome Page](0-welcome)
+[Go back to Welcome Page](0-welcome.md)
